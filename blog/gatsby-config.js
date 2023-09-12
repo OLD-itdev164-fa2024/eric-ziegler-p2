@@ -4,6 +4,10 @@
  * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/
  */
 
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`
+})
+
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
@@ -31,8 +35,8 @@ module.exports = {
     {
       resolve: `gatsby-source-contentful`,
       options: {
-        spaceId: `0vod45561urk`,
-        accessToken: `Y63pypw6-fFbGoiCnwUhjqTgatX36N-dfesD2TSINU0`,
+        spaceId: `${process.env.SPACE_ID}`,
+        accessToken: `${process.env.ACCESS_TOKEN}`,
       },
     },
     `gatsby-transformer-sharp`,
