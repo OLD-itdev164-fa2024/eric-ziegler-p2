@@ -25,6 +25,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-image`,
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -39,7 +40,7 @@ module.exports = {
         accessToken: `${process.env.ACCESS_TOKEN}`,
       },
     },
-    `gatsby-transformer-sharp`,
+    `gatsby-transformer-sharp`, 
     `gatsby-transformer-remark`,
     `gatsby-plugin-sharp`,
     {
