@@ -14,6 +14,6 @@ export const List = ({ children, ...rest }) => (
     </BaseContainer>
 )
 
-List.PropTypes = {
+List.propTypes = {
     children: PropTypes.node.isRequired
 }
