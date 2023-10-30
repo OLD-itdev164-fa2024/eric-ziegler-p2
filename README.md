@@ -1,3 +1,3 @@
 # eric-ziegler
 
-activity seven completed.
+activity eight completed.
