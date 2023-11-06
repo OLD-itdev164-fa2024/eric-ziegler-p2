@@ -9,8 +9,8 @@ const BlogPost = ({data}) => {
 
     return (
         <Layout>
-            <H1>{title}</H1>
             <div><GatsbyImage image={heroImage.gatsbyImageData} /></div>
+            <H1>{title}</H1>
             <div dangerouslySetInnerHTML={{__html: body.childMarkdownRemark.html}}></div>
         </Layout>
     )
@@ -24,7 +24,11 @@ export const pageQuery = graphql`
             title
             slug
             heroImage{
-              gatsbyImageData
+              gatsbyImageData(
+                layout: CONSTRAINED
+                placeholder: BLURRED
+                width: 960
+              )
             }
             body{
               childMarkdownRemark{
