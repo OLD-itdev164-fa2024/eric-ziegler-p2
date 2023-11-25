@@ -1,7 +1,6 @@
 import React from 'react'
 import mainHeaderImage from './img/react.png'
 import { Search } from 'styled-icons/feather'
-import { ArrowUp, ArrowDown, ArrowLeft, ArrowRight } from 'styled-icons/entypo'
 
 const images = {
     mainHeaderImage
@@ -9,10 +8,6 @@ const images = {
 
 const icons = {
     Search: <Search />,
-    North: <ArrowUp />,
-    East: <ArrowRight />,
-    South: <ArrowDown />,
-    West: <ArrowLeft/>
 }
 
 const theme = {
