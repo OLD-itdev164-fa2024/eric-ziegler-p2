@@ -63,9 +63,7 @@ const Header = ({ siteTitle }) => (
           <MediaQuery>
             <StyledLink to="/">Home</StyledLink>
             <StyledLink to="/about">About</StyledLink>
-            <StyledLink to="/contact">Contact</StyledLink>
           </MediaQuery>            
-          <SearchButton variant='contrast'/>
         </Nav>
       </Section>
     </Section>
