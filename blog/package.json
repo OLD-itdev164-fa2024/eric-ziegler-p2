@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "ziegler-eric-164-fp",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "school project",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Eric Ziegler",
   "dependencies": {
     "babel-plugin-styled-components": "^2.1.4",
     "gatsby": "^5.12.1",
