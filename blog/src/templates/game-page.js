@@ -1,17 +1,10 @@
 import React from "react";
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
 import { graphql } from "gatsby";
 import Layout from '../components/layout';
 import { GatsbyImage } from "gatsby-plugin-image";
 import { H1 } from "../components/Heading";
-import { ArrowUp, ArrowDown, ArrowLeft, ArrowRight } from 'styled-icons/entypo'
-
-const navIcons = {
-  North: <ArrowUp />,
-  East: <ArrowRight />,
-  South: <ArrowDown />,
-  West: <ArrowLeft/>
-}
+import { TravelLink } from "../components/TravelLink";
 
 const GamePage = ({data}) => {
   const { title, mapImage, areaDescription, north, east, south, west } = data.contentfulGameTile;
@@ -22,17 +15,19 @@ const GamePage = ({data}) => {
             <H1>{title}</H1>
         <div dangerouslySetInnerHTML={{ __html: areaDescription.childMarkdownRemark.html }}></div>
 
+        
+
         {north == null ? null :
-          <div><Link to={`/${north.slug}`}>Go North</Link>: {north.connectionHint}</div>
+          <TravelLink direction="n" tile={north} />
         }
         {east == null ? null :
-          <div><Link to={`/${east.slug}`}>Go East</Link>: {east.connectionHint}</div>
+          <TravelLink direction="e" tile={east} />
         }
         {south == null ? null :
-          <div><Link to={`/${south.slug}`}>Go South</Link>: {south.connectionHint}</div>
+          <TravelLink direction="s" tile={south} />
         }
         {west == null ? null :
-          <div><Link to={`/${west.slug}`}>Go West</Link>: {west.connectionHint}</div>
+          <TravelLink direction="w" tile={west} />
         }
         </Layout>
     )
