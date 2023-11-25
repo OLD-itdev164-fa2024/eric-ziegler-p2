@@ -4,26 +4,35 @@ import { Link } from "gatsby"
 import styled from 'styled-components'
 import { ArrowUp, ArrowDown, ArrowLeft, ArrowRight } from 'styled-icons/entypo'
 
+const StyledLink = styled(Link)`
+  margin: 0 5px 0 10px;
+  color: #121;
+  text-decoration: none;
+  &:hover {
+    color: #171;
+  }
+`
+
 export const TravelLink = styled(({ direction, tile, ...rest }) => {
     if(direction === 'n')
         return <div>
-                <Link to={`/${tile.slug}`}>
-                    <ArrowUp size="30" />Go North:</Link> {tile.connectionHint}
+                <StyledLink to={`/${tile.slug}`}>
+                    <ArrowUp size="24" />Go North:</StyledLink>{tile.connectionHint}
         </div>
     if(direction === 'e')
         return <div>
-                <Link to={`/${tile.slug}`}>
-                    <ArrowRight size="30" />Go East:</Link> {tile.connectionHint}
+                <StyledLink to={`/${tile.slug}`}>
+                    <ArrowRight size="24" />Go East:</StyledLink>{tile.connectionHint}
         </div>
     if(direction === 's')
         return <div>
-                <Link to={`/${tile.slug}`}>
-                    <ArrowDown size="30" />Go South:</Link> {tile.connectionHint}
+                <StyledLink to={`/${tile.slug}`}>
+                    <ArrowDown size="24" />Go South:</StyledLink>{tile.connectionHint}
         </div>
     if(direction === 'w')
         return <div>
-                <Link to={`/${tile.slug}`}>
-                    <ArrowLeft size="30" />Go West:</Link> {tile.connectionHint}
+                <StyledLink to={`/${tile.slug}`}>
+                    <ArrowLeft size="24" />Go West:</StyledLink>{tile.connectionHint}
         </div>
 })``
 
