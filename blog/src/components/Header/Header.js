@@ -48,13 +48,13 @@ const MediaQuery = styled.div`
 const Header = ({ siteTitle }) => (
   <Outer>
     <Section flex>
-      <Section width={2/11} flex flexDirection="column" justifyContent="center">
+      <Section width={1/10} flex flexDirection="column" justifyContent="center">
         <ThemeConsumer>
           {theme => <Image src={theme.images.mainHeaderImage} />}
         </ThemeConsumer>
       </Section>
 
-      <Section width={9 / 11} flex flexDirection="column" justifyContent="center">
+      <Section width={9 / 10} flex flexDirection="column" justifyContent="center">
         <Nav>
           <Title>
             <StyledLink to="/">{siteTitle}</StyledLink>
