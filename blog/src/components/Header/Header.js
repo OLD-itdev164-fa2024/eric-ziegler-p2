@@ -5,7 +5,6 @@ import PropTypes from "prop-types"
 import { Flex } from 'rebass'
 import { H1 } from "../Heading"
 import { Section } from "../Section"
-import { SearchButton } from "../Button"
 
 const Outer = styled.header`
   background: ${({theme}) => theme.variants.header.primary.backgroundColor};
@@ -61,7 +60,7 @@ const Header = ({ siteTitle }) => (
             <StyledLink to="/">{siteTitle}</StyledLink>
           </Title>
           <MediaQuery>
-            <StyledLink to="/">Home</StyledLink>
+            <StyledLink to="/">Return to Start</StyledLink>
             <StyledLink to="/about">About</StyledLink>
           </MediaQuery>            
         </Nav>
