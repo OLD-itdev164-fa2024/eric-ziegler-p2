@@ -5,6 +5,7 @@ import Layout from '../components/layout';
 import { GatsbyImage } from "gatsby-plugin-image";
 import { H1 } from "../components/Heading";
 import { TravelLink } from "../components/TravelLink";
+import { theContext } from "../../ContextProvider"
 
 const GamePage = ({data}) => {
   const { title, mapImage, areaDescription, north, east, south, west } = data.contentfulGameTile;
@@ -15,6 +16,16 @@ const GamePage = ({data}) => {
             <H1>{title}</H1>
         <div dangerouslySetInnerHTML={{ __html: areaDescription.childMarkdownRemark.html }}></div>
 
+        <theContext.Consumer>
+        {context => (
+          <React.Fragment>
+            <div>{context.testField}</div>
+            <button onClick={() => (
+              context.changeValue(-1)
+            )}>Click</button>
+          </React.Fragment>
+        )}
+      </theContext.Consumer>
         
 
         {north == null ? null :
