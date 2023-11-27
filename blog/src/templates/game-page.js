@@ -7,18 +7,20 @@ import { H1 } from "../components/Heading";
 import { TravelLink } from "../components/TravelLink";
 // import { theContext } from "../../ContextProvider"
 
-var health = 0
+var hp = 0
 
-const updateHealth = (mod) => {
-  health = parseInt(sessionStorage.getItem('lsTest'))
-  health+= mod
-  sessionStorage.setItem('lsTest', health)
+const changeHealth = (encounter) => {
+  hp = parseInt(sessionStorage.getItem('playerHealth'))
+  encounter.isHelpful
+    ? hp += encounter.hpModifier
+    : hp -= encounter.hpModifier
+  sessionStorage.setItem('playerHealth', hp)
 }
 
 const GamePage = ({data}) => {
-  const { title, mapImage, areaDescription, north, east, south, west } = data.contentfulGameTile;
-  var modifier = (south != null ? -2 : 0)
-  updateHealth(modifier)
+  const { title, mapImage, areaDescription, north, east, south, west, encounter } = data.contentfulGameTile;
+  if (encounter != null) changeHealth(encounter)
+  else hp = parseInt(sessionStorage.getItem('playerHealth'))
 
   return (
     <Layout>
@@ -26,14 +28,10 @@ const GamePage = ({data}) => {
       <H1>{title}</H1>
       <div dangerouslySetInnerHTML={{ __html: areaDescription.childMarkdownRemark.html }}></div>
 
+      <div>{hp}</div>
+      {encounter === null ? null : encounter.hpModifier}
       
-      {modifier}
-      <div>{sessionStorage.getItem('lsTest')}</div>
-      <button onClick={() => (
-        updateHealth(modifier)
-      )}>Click</button>
-      
-      {health <= 0 ? 
+      {hp <= 0 ? 
         <div>DEADZO</div>
       : null}
     
@@ -92,6 +90,12 @@ export const pageQuery = graphql`
     			west{
             slug
     				connectionHint            
+          }
+    			encounter{
+            name
+            isHelpful
+            hpModifier
+            shortDescription
           }
         }
     }
