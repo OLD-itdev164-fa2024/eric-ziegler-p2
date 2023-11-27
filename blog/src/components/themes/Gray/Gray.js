@@ -1,4 +1,4 @@
-import mainHeaderImage from './img/flag.png'
+import mainHeaderImage from './img/compass.png'
 
 const images = {
     mainHeaderImage
