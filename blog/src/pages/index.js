@@ -21,7 +21,7 @@ const Grid = styled(Box)`
 const IndexPage = ({data}) => (
   <Layout>
     <Seo title="Home" />
-    <Link to="/test-a">Begin!</Link>
+    <Link to="/test-a" onClick={() => (sessionStorage.setItem('lsTest', 8))}>Begin!</Link>
   </Layout>
 )
 
