@@ -18,10 +18,15 @@ const Grid = styled(Box)`
   grid-template-columns: repeat(auto-fit, minmax(128px,1fr));
 `
 
+const InitGame = () => {
+  sessionStorage.clear()
+  sessionStorage.setItem('playerHealth', 8)
+}
+
 const IndexPage = ({data}) => (
   <Layout>
     <Seo title="Home" />
-    <Link to="/test-a" onClick={() => (sessionStorage.setItem('playerHealth', 8))}>Begin!</Link>
+    <Link to="/test-a" onClick={() => (InitGame())}>Begin!</Link>
   </Layout>
 )
 

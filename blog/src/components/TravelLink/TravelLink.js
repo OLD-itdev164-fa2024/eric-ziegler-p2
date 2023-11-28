@@ -17,22 +17,22 @@ export const TravelLink = styled(({ direction, tile, ...rest }) => {
     if(direction === 'n')
         return <div>
                 <StyledLink to={`/${tile.slug}`}>
-                    <ArrowUp size="24" />Go North:</StyledLink>{tile.connectionHint}
+                    <ArrowUp size={24} />Go North:</StyledLink>{tile.connectionHint}
         </div>
     if(direction === 'e')
         return <div>
                 <StyledLink to={`/${tile.slug}`}>
-                    <ArrowRight size="24" />Go East:</StyledLink>{tile.connectionHint}
+                    <ArrowRight size={24} />Go East:</StyledLink>{tile.connectionHint}
         </div>
     if(direction === 's')
         return <div>
                 <StyledLink to={`/${tile.slug}`}>
-                    <ArrowDown size="24" />Go South:</StyledLink>{tile.connectionHint}
+                    <ArrowDown size={24} />Go South:</StyledLink>{tile.connectionHint}
         </div>
     if(direction === 'w')
         return <div>
                 <StyledLink to={`/${tile.slug}`}>
-                    <ArrowLeft size="24" />Go West:</StyledLink>{tile.connectionHint}
+                    <ArrowLeft size={24} />Go West:</StyledLink>{tile.connectionHint}
         </div>
 })``
 
