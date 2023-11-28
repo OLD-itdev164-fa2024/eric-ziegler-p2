@@ -26,15 +26,18 @@ const updateHealth = (encounter) => {
 
 const GamePage = ({data}) => {
   const { title, identifier, mapImage, areaDescription, north, east, south, west, encounter } = data.contentfulGameTile;
+
+  // determine if map tile is new, and if there is an encounter on it
   if (encounter != null && sessionStorage.getItem(identifier) == null){
-    updateHealth(encounter)
-    showEncounter = true
+    updateHealth(encounter) // update health according to encounter details
+    showEncounter = true // enable displaying encounter details
   }
   else{
-    hp = parseInt(sessionStorage.getItem('playerHealth'))
-    showEncounter = false
+    hp = parseInt(sessionStorage.getItem('playerHealth')) // no encounter, just read in current health
+    showEncounter = false // disable encounter component
   }
 
+  // set a flag to show this map tile has been visited
   sessionStorage.setItem(identifier, '1')
   
 
@@ -47,9 +50,8 @@ const GamePage = ({data}) => {
       {showEncounter ? <GameEncounter encounter={encounter} /> : null}
 
       
-      
       {hp > 0
-        ?
+        ? 
         <React.Fragment>
           <p><Heart size={24} color="red"/> {hp}</p>
           {north == null ? null :
