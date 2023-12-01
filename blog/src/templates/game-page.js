@@ -6,7 +6,6 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import { H1 } from "../components/Heading";
 import { TravelLink } from "../components/TravelLink";
 import { GameEncounter } from "../components/GameEncounter";
-// import { theContext } from "../../ContextProvider"
 import { Heart } from "styled-icons/entypo";
 import { Skull, RotateLeft } from "styled-icons/fa-solid";
 
@@ -28,6 +27,7 @@ const GamePage = ({data}) => {
   const { title, identifier, mapImage, areaDescription, north, east, south, west, encounter } = data.contentfulGameTile;
 
   // determine if map tile is new, and if there is an encounter on it
+  // showEncounter flag is needed to deal with not repeating encounters but still running them on first visit
   if (encounter != null && sessionStorage.getItem(identifier) == null){
     updateHealth(encounter) // update health according to encounter details
     showEncounter = true // enable displaying encounter details
@@ -47,7 +47,9 @@ const GamePage = ({data}) => {
       <H1>{title}</H1>
       <div dangerouslySetInnerHTML={{ __html: areaDescription.childMarkdownRemark.html }}></div>
 
-      {showEncounter ? <GameEncounter encounter={encounter} /> : null}
+      {showEncounter
+        ? <GameEncounter encounter={encounter} />
+        : null}
 
       
       {hp > 0
@@ -69,7 +71,6 @@ const GamePage = ({data}) => {
         </React.Fragment>
 
         :
-        
         <React.Fragment>
           <p><Skull size={24} color="red"/> {hp}</p>
           <div>You have fallen. Your adventure is at an end. Better luck next time!</div>
