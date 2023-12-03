@@ -20,7 +20,7 @@ const Grid = styled(Box)`
 
 const InitGame = () => {
   sessionStorage.clear()
-  sessionStorage.setItem('playerHealth', 8)
+  sessionStorage.setItem('playerHealth', 100)
 }
 
 const IndexPage = ({ data }) => {
