@@ -23,12 +23,15 @@ const InitGame = () => {
   sessionStorage.setItem('playerHealth', 8)
 }
 
-const IndexPage = ({data}) => (
+const IndexPage = ({ data }) => {
+  const { slug } = data.contentfulGameTile;
+  return (
   <Layout>
     <Seo title="Home" />
-    <Link to="/test-a" onClick={() => (InitGame())}>Begin!</Link>
+    <Link to={`/${slug}`} onClick={() => (InitGame())}>Begin!</Link>
   </Layout>
-)
+  )
+}
 
 /**
  * Head export to define metadata for the page
@@ -40,27 +43,9 @@ export const Head = () => <Seo title="Home" />
 export default IndexPage
 
 export const query = graphql`
-  {
-  allContentfulBlogPost{
-    edges{
-      node{
-        slug
-        title
-        id
-        heroImage {
-          gatsbyImageData(
-            layout: CONSTRAINED
-            placeholder:BLURRED
-            width:500
-          )
-        }
-        body {
-          childMarkdownRemark {
-            excerpt
-          }
-        }
-      }
+  query startQuery{
+        contentfulGameTile(title: {eq: "Glade of Testing"}){
+          slug
     }
-  }
 }
 `
