@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 export const GameEncounter = styled(({ encounter, ...rest }) => {
     return <div>
-        <p>{encounter.shortDescription}</p>
+        <p dangerouslySetInnerHTML={{ __html: encounter.flavorText.childMarkdownRemark.html }}/>
         <p>You {encounter.isHelpful ? 'gain' : 'lose'} {encounter.hpModifier} health.</p>
     </div>
 })``

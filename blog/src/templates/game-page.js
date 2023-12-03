@@ -45,12 +45,12 @@ const GamePage = ({data}) => {
     <Layout>
       <div><GatsbyImage image={mapImage.gatsbyImageData} /></div>
       <H1>{title}</H1>
-      <div dangerouslySetInnerHTML={{ __html: areaDescription.childMarkdownRemark.html }}></div>
-
+      
       {showEncounter
         ? <GameEncounter encounter={encounter} />
         : null}
-
+        
+      <div dangerouslySetInnerHTML={{ __html: areaDescription.childMarkdownRemark.html }}></div>
       
       {hp > 0
         ? 
@@ -125,7 +125,11 @@ export const pageQuery = graphql`
             name
             isHelpful
             hpModifier
-            shortDescription
+            flavorText{
+              childMarkdownRemark{
+                html
+              }
+            }
           }
         }
     }
