@@ -44,7 +44,7 @@ export default IndexPage
 
 export const query = graphql`
   query startQuery{
-        contentfulGameTile(title: {eq: "Glade of Testing"}){
+        contentfulGameTile(title: {eq: "Sandy Beach"}){
           slug
     }
 }
