@@ -4,18 +4,19 @@ import { graphql } from "gatsby"
 
 import styled from 'styled-components'
 import { Box } from 'rebass'
+import { H1 } from "../components/Heading";
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 
-const Grid = styled(Box)`
+const Flex = styled(Box)`
   box-sizing: border-box;
   margin: 0px;
   min-width: 0px;
-  display: grid;
-  gap: 100px;
-  grid-template-columns: repeat(auto-fit, minmax(128px,1fr));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `
 
 const InitGame = () => {
@@ -28,7 +29,11 @@ const IndexPage = ({ data }) => {
   return (
   <Layout>
     <Seo title="Home" />
-    <Link to={`/${slug}`} onClick={() => (InitGame())}>Begin!</Link>
+    <Flex>
+        <H1>Welcome to One Six Four, Adventure!</H1>
+        <p>An ode to classic text-based adventure games. See if you can make it to the end!</p>
+      <Link to={`/${slug}`} onClick={() => (InitGame())}>Begin!</Link>
+    </Flex>
   </Layout>
   )
 }
