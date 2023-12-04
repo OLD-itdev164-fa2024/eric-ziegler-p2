@@ -14,9 +14,9 @@ These were admittedly somewhat iterative and retroactively developed, as I did n
 - ~~Page theme according to world environment.~~ Unsolved.
 - ~~Equipment for the player to use/carry.~~ Too ambitious.
 
-The world is constructed of GameTile content type objects on the CMS. They contain the map image, flavor text, and importantly four reference fields to potential adjacent GameTiles, as well as a GameEncounter content object reference.
+The world is constructed of GameTile content type objects on the CMS. They contain the map image, flavor text, and importantly four reference fields to potential adjacent GameTiles, as well as a GameEncounter content object reference. Each tile also holds a "connection hint" which is a short descriptive text queried to dress up the links for traveling between tiles.
 
-The GameEncounter holds whether it heals or harms the player and by how much, as well as obvious flavor text.
+The GameEncounter holds whether it heals or harms the player and by how much, as well as obvious flavor text to describe what is happening to the player.
 
 Browser session storage is used to track health points as well as visited map tiles for encounter handling.
 
