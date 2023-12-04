@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "gatsby"
 import { graphql } from "gatsby";
 import Layout from '../components/layout';
+import Seo from "../components/seo"
 import { GatsbyImage } from "gatsby-plugin-image";
 import styled from 'styled-components'
 import { Box } from "rebass";
@@ -96,6 +97,8 @@ const GamePage = ({data}) => {
     </Layout>
   )
 }
+
+export const Head = ({data}) => <Seo title={data.contentfulGameTile.title} />
 
 export default GamePage;
 
