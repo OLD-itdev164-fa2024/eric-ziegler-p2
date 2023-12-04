@@ -5,7 +5,7 @@ Eric Ziegler, ITDEV164 Project 2
 This is a bit of a kludge to force a game structure into the Contentful CMS, I just didn't want to make a blog/article type site despite it seeming like that's what Contentful is designed to be. My off the cuff placeholder articles in the weekly activities put this idea in my head and I just couldn't shake it. I think I learn more sometimes by making things do other than the intended.  
 Obviously this "game" can be broken or cheated very easily, but making a robust game wasn't the point.
 
-### Feature List
+### Features / Requirements / Tasks
 These were admittedly somewhat iterative and retroactively developed, as I did not really have a grasp on what I could accomplish until I started doing some preliminary tests and building out a little at a time.
 - A world made up of tiles, displayed one per page, cross-linked with navigation.
 - Health Points tracked across pages with death/failure checks.
