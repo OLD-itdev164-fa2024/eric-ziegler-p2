@@ -28,7 +28,7 @@ const IndexPage = ({ data }) => {
   const { slug } = data.contentfulGameTile;
   return (
   <Layout>
-    <Seo title="Home" />
+    <Seo title="One Six Four, Adventure!" />
     <Flex>
         <H1>Welcome to One Six Four, Adventure!</H1>
         <p>An ode to classic text-based adventure games. See if you can make it to the end!</p>

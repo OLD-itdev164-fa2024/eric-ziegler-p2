@@ -14,7 +14,7 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     title: `One Six Four, Adventure!`,
-    description: `school project`,
+    description: `Text-based adventure game for a webdev final project.`,
     author: `Eric Ziegler`,
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
     contact: {
