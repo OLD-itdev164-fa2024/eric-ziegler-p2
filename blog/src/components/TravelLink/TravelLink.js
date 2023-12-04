@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import { ArrowUp, ArrowDown, ArrowLeft, ArrowRight } from 'styled-icons/entypo'
 
 const StyledLink = styled(Link)`
-  margin: 0 5px 0 10px;
+  margin: 0 5px 0 0;
   color: #121;
   text-decoration: none;
   &:hover {
